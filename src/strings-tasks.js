@@ -282,8 +282,17 @@ function reverseString(str) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  let alph = '';
+  let arr = [];
+  for (let i = 0; i < str.length; i += 1) {
+    arr.push(str.charCodeAt(i));
+  }
+  arr = arr.sort((a, b) => a - b);
+  for (let i = 0; i < arr.length; i += 1) {
+    alph += String.fromCharCode(arr[i]);
+  }
+  return alph;
 }
 
 /**
